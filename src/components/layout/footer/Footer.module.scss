@@ -1,0 +1,34 @@
+.Footer {
+  box-shadow: 0 0 10px 1px silver;
+  padding: 40px 0;
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .nav {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 20px;
+      img {
+        width: 120px;
+      }
+      button {
+        width: max-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        font-weight: bold;
+        background: none;
+        color: #01b3e4;
+        font-size: 20px;
+      }
+    }
+    .text {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+  }
+}

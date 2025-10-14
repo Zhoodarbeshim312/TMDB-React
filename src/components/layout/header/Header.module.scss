@@ -1,0 +1,77 @@
+.Header {
+  background: #121212;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 0 10px 1px silver;
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    img {
+      width: 120px;
+      cursor: pointer;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      a {
+        color: white;
+        font-size: 18px;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+      select {
+        cursor: pointer;
+        outline: none;
+        background: none;
+        border: 2px solid white;
+        border-radius: 5px;
+        color: white;
+        padding: 5px 10px;
+        font-size: 18px;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+
+        option {
+          background: #121212;
+          color: white;
+        }
+      }
+      .form {
+        display: flex;
+        align-items: center;
+        position: relative;
+        input {
+          padding: 10px 40px 10px 10px;
+          border-radius: 5px;
+          background: none;
+          border: 2px solid white;
+          font-size: 18px;
+          color: white;
+          &::placeholder {
+            color: white;
+          }
+        }
+        button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          right: 7px;
+          background: none;
+          color: white;
+          font-size: 35px;
+        }
+      }
+      @media (max-width: 815px) {
+        display: none;
+      }
+    }
+  }
+}
