@@ -2,7 +2,12 @@ import { NavLink } from "react-router-dom";
 import scss from "./Header.module.scss";
 import { IoSearchOutline } from "react-icons/io5";
 import logo from "../../../assets/images/logo.svg";
+import { Divide as Hamburger } from "hamburger-react";
+import { useState } from "react";
+
 const Header = () => {
+  const [isOpen, setOpen] = useState<boolean>(false);
+
   return (
     <header className={scss.Header}>
       <div className="container">
@@ -24,6 +29,7 @@ const Header = () => {
               </button>
             </div>
           </nav>
+          <Hamburger toggled={isOpen} toggle={setOpen} />
         </div>
       </div>
     </header>
