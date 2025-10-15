@@ -1,18 +1,24 @@
 .Footer {
   box-shadow: 0 0 10px 1px silver;
   padding: 40px 0;
+
   .content {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+
     .nav {
       display: flex;
       flex-direction: column;
-      align-items: flex-end;
+      align-items: flex-start; // меняем на flex-start для мобильных
       gap: 20px;
+
       img {
         width: 120px;
       }
+
       button {
         width: max-content;
         display: flex;
@@ -23,12 +29,78 @@
         background: none;
         color: #01b3e4;
         font-size: 20px;
+        cursor: pointer;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #0288c5;
+        }
       }
     }
+
     .text {
       display: flex;
       flex-direction: column;
       gap: 5px;
+
+      h3 {
+        margin-bottom: 5px;
+        font-size: 18px;
+      }
+
+      p {
+        font-size: 16px;
+        cursor: pointer;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #01b3e4;
+        }
+      }
+    }
+  }
+
+  // Tablet: 768px - 1024px
+  @media (max-width: 1024px) {
+    .content {
+      justify-content: space-around;
+      gap: 20px;
+
+      .nav {
+        align-items: center;
+      }
+
+      .text {
+        align-items: center;
+      }
+    }
+  }
+
+  // Mobile: <768px
+  @media (max-width: 767px) {
+    padding: 30px 15px;
+
+    .content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 25px;
+
+      .nav {
+        align-items: center;
+      }
+
+      .text {
+        align-items: center;
+
+        h3 {
+          font-size: 16px;
+        }
+
+        p {
+          font-size: 14px;
+        }
+      }
     }
   }
 }
