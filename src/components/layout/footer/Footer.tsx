@@ -2,7 +2,7 @@ import scss from "./Footer.module.scss";
 import logo from "../../../assets/images/footerLogo.svg";
 const Footer = () => {
   return (
-    <section className={scss.Footer}>
+    <footer className={scss.Footer}>
       <div className="container">
         <div className={scss.content}>
           <div className={scss.nav}>
@@ -39,7 +39,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </section>
+    </footer>
   );
 };
 
