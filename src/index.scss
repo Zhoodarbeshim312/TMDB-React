@@ -22,10 +22,6 @@ input {
   outline: none;
 }
 
-body {
-  background: #121212;
-  color: white;
-}
 .container {
   max-width: 1200px;
   width: 100%;
@@ -54,4 +50,44 @@ body {
 }
 .app footer {
   margin-top: auto;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at 20% 20%, #892be280, transparent 50%),
+    radial-gradient(circle at 80% 80%, #892be280, transparent 50%),
+    linear-gradient(135deg, #3b0a45, #1a002b);
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 1px,
+    transparent 1px
+  );
+  background-size: 80px 80px;
+  animation: glowMove 10s linear infinite;
+  z-index: 0;
+}
+
+@keyframes glowMove {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 80px 80px;
+  }
 }
