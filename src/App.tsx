@@ -1,18 +1,18 @@
-import type { FC, JSX } from "react";
-import Header from "./components/layout/header/Header";
+import type { ReactElement } from "react";
 import Footer from "./components/layout/footer/Footer";
-import { Route, Routes } from "react-router-dom";
+import Header from "./components/layout/header/Header";
 import MainPage from "./components/pages/MainPage";
 import PopularPage from "./components/pages/PopularPage";
 import TopRatedPage from "./components/pages/TopRatedPage";
+import { Route, Routes } from "react-router-dom";
 
-const App: FC = () => {
-  interface IRoute {
+const App = () => {
+  interface IRoutes {
     id: number;
     path: string;
-    element: JSX.Element;
+    element: ReactElement;
   }
-  const routes: IRoute[] = [
+  const routes: IRoutes[] = [
     {
       id: 1,
       path: "/",
@@ -25,7 +25,7 @@ const App: FC = () => {
     },
     {
       id: 3,
-      path: "/top-rated",
+      path: "/topRated",
       element: <TopRatedPage />,
     },
   ];
@@ -41,4 +41,5 @@ const App: FC = () => {
     </div>
   );
 };
+
 export default App;

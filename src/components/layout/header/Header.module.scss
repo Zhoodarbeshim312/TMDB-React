@@ -1,76 +1,94 @@
 .Header {
-  background: #121212;
   padding: 10px 0;
-  position: sticky;
+  width: 100%;
+  position: fixed;
   top: 0;
-  z-index: 100;
-  box-shadow: 0 0 10px 1px silver;
+  backdrop-filter: blur(5px);
   .content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    img {
-      width: 120px;
-      cursor: pointer;
+    a {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+      gap: 5px;
+      color: white;
+      font-weight: 600;
+      span {
+        border: 2px solid white;
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        border-radius: 10px;
+        background: purple;
+        color: white;
+      }
     }
     .nav {
       display: flex;
       align-items: center;
       gap: 20px;
+      font-size: 18px;
       a {
-        color: white;
+        font-family: "League Spartan", sans-serif;
+        font-weight: 500;
+        font-style: Medium;
         font-size: 18px;
+        line-height: 100%;
+        color: white;
         transition: 0.2s ease-in-out;
-        &:hover {
-          transform: scale(1.1);
+        width: max-content;
+        position: relative;
+        &::after {
+          content: "";
+          bottom: -4px;
+          position: absolute;
+          height: 2px;
+          width: 100%;
+          border-radius: 50px;
+          left: 0;
+          background: white;
+          transition: 0.3s ease-in-out;
+          transform: scaleX(0);
         }
-      }
-      select {
-        cursor: pointer;
-        outline: none;
-        background: none;
-        border: 2px solid white;
-        border-radius: 5px;
-        color: white;
-        padding: 5px 10px;
-        font-size: 18px;
-        appearance: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-
-        option {
-          background: #121212;
-          color: white;
+        &:hover,
+        &.active {
+          color: #ff80d5;
+        }
+        &:hover::after,
+        &.active::after {
+          transform: scaleX(1);
+          color: #ff80d5;
         }
       }
       .form {
-        display: flex;
-        align-items: center;
         position: relative;
         input {
-          padding: 10px 40px 10px 10px;
-          border-radius: 5px;
-          background: none;
+          backdrop-filter: blur(5px);
           border: 2px solid white;
-          font-size: 18px;
+          background: none;
+          border-radius: 10px;
+          font-size: 16px;
+          padding: 10px 40px 10px 10px;
           color: white;
           &::placeholder {
             color: white;
           }
         }
         button {
+          top: 8px;
           display: flex;
           align-items: center;
           justify-content: center;
-          position: absolute;
-          right: 7px;
           background: none;
           color: white;
-          font-size: 35px;
+          font-size: 30px;
+          right: 8px;
+          position: absolute;
         }
-      }
-      @media (max-width: 815px) {
-        display: none;
       }
     }
   }

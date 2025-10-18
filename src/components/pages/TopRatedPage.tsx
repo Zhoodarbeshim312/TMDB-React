@@ -1,5 +1,11 @@
+import TopRated from "./topRated/TopRated";
+
 const TopRatedPage = () => {
-  return <></>;
+  return (
+    <>
+      <TopRated />
+    </>
+  );
 };
 
 export default TopRatedPage;

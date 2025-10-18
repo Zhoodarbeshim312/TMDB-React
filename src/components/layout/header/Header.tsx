@@ -1,35 +1,30 @@
-import { NavLink } from "react-router-dom";
 import scss from "./Header.module.scss";
-import { IoSearchOutline } from "react-icons/io5";
-import logo from "../../../assets/images/logo.svg";
-import { Divide as Hamburger } from "hamburger-react";
-import { useState } from "react";
+import { MdOutlineMovieFilter } from "react-icons/md";
+import { IoIosSearch } from "react-icons/io";
 
+import { Link } from "react-router-dom";
 const Header = () => {
-  const [isOpen, setOpen] = useState<boolean>(false);
-
   return (
     <header className={scss.Header}>
       <div className="container">
         <div className={scss.content}>
-          <img src={logo} alt="img" />
+          <Link to={"/"}>
+            <span>
+              <MdOutlineMovieFilter />
+            </span>
+            TMDB Movie
+          </Link>
           <nav className={scss.nav}>
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/popular">Popular</NavLink>
-            <NavLink to="/top-rated">Top Rated</NavLink>
-            <select>
-              <option value="">Language</option>
-              <option value="en">EN</option>
-              <option value="ru">RU</option>
-            </select>
+            <Link to={"/"}>Main</Link>
+            <Link to={"/popular"}>Popular</Link>
+            <Link to={"/topRated"}>Top Rated</Link>
             <div className={scss.form}>
               <input type="text" placeholder="Search movie..." />
               <button>
-                <IoSearchOutline />
+                <IoIosSearch />
               </button>
             </div>
           </nav>
-          <Hamburger toggled={isOpen} toggle={setOpen} />
         </div>
       </div>
     </header>
