@@ -1,0 +1,32 @@
+.card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: 270px;
+  background: #121212;
+  border-radius: 10px;
+  position: relative;
+
+  img {
+    cursor: pointer;
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+
+    .rating {
+      position: absolute;
+      left: 10px;
+      bottom: 80px;
+      border: 2px solid black;
+      background: #000;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
