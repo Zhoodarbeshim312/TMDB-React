@@ -16,7 +16,6 @@ const Welcome = () => {
   const [nextBg, setNextBg] = useState<IData | null>(null);
   const [fade, setFade] = useState(false);
 
-  // --- загрузка фильмов ---
   const getData = async (key: string) => {
     try {
       const res = await axios.get<IResponse>(
@@ -24,7 +23,6 @@ const Welcome = () => {
       );
       setApiData(res.data.results);
 
-      // выбираем первый фон случайно
       const first =
         res.data.results[Math.floor(Math.random() * res.data.results.length)];
       setCurrentBg(first);
@@ -34,7 +32,6 @@ const Welcome = () => {
     }
   };
 
-  // --- typed.js ---
   useEffect(() => {
     let isMounted = true;
     getData(api_key);
@@ -66,18 +63,17 @@ const Welcome = () => {
     };
   }, []);
 
-  // --- плавная смена фона каждые 2 секунды ---
   useEffect(() => {
     if (apiData.length === 0) return;
 
     const interval = setInterval(() => {
       const random = Math.floor(Math.random() * apiData.length);
       setNextBg(apiData[random]);
-      setFade(true); // запускаем fade
+      setFade(true);
       setTimeout(() => {
         setCurrentBg(apiData[random]);
-        setFade(false); // скрываем overlay
-      }, 1000); // время перехода
+        setFade(false);
+      }, 1000);
     }, 2000);
 
     return () => clearInterval(interval);
@@ -85,7 +81,6 @@ const Welcome = () => {
 
   return (
     <section className={scss.Welcome}>
-      {/* основной фон */}
       <div
         className={scss.bg}
         style={{
@@ -94,7 +89,6 @@ const Welcome = () => {
             : "none",
         }}
       >
-        {/* overlay для плавного перехода */}
         {nextBg && (
           <div
             className={`${scss.bgOverlay} ${fade ? scss.fadeIn : ""}`}
