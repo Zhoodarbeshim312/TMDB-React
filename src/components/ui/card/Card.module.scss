@@ -6,10 +6,33 @@
   border-radius: 10px;
   position: relative;
 
-  img {
-    cursor: pointer;
+  .imgWrapper {
     border-radius: 10px 10px 0 0;
     width: 100%;
+    min-height: 405px; // фиксированная высота, чтобы не прыгала секция
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 100%;
+      border-radius: 10px 10px 0 0;
+      display: block;
+    }
+
+    .imgPlaceholder {
+      border-radius: 10px 10px 0 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 16px;
+    }
   }
 
   .info {
@@ -27,6 +50,17 @@
       border-radius: 50%;
       width: 50px;
       height: 50px;
+    }
+
+    h4 {
+      color: white;
+      margin: 5px 0;
+      font-size: 16px;
+    }
+
+    p {
+      color: #aaa;
+      font-size: 14px;
     }
   }
 }
