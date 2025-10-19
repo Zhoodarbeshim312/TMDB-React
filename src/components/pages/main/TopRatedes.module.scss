@@ -1,0 +1,29 @@
+.TopRatedes {
+  padding: 40px 0;
+  h1 {
+    width: max-content;
+    padding: 5px 20px;
+    margin-bottom: 40px;
+    background: #121212;
+    border: 2px solid purple;
+    border-radius: 50px;
+  }
+  .content {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: 20px;
+
+    &::-webkit-scrollbar {
+      height: 4px;
+      background: #000;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: purple;
+      border-radius: 10px;
+    }
+  }
+}
