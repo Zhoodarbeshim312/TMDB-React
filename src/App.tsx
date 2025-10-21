@@ -5,6 +5,7 @@ import MainPage from "./components/pages/MainPage";
 import PopularPage from "./components/pages/PopularPage";
 import TopRatedPage from "./components/pages/TopRatedPage";
 import { Route, Routes } from "react-router-dom";
+import Details from "./components/pages/details/Details";
 
 const App = () => {
   interface IRoutes {
@@ -27,6 +28,11 @@ const App = () => {
       id: 3,
       path: "/topRated",
       element: <TopRatedPage />,
+    },
+    {
+      id: 4,
+      path: "/details/:movieId",
+      element: <Details />,
     },
   ];
   return (

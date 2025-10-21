@@ -4,6 +4,7 @@ import scss from "./Card.module.scss";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import loading from "../../../assets/images/loading.svg";
+import { useNavigate } from "react-router-dom";
 
 interface ICardProps {
   el: IData;
@@ -12,7 +13,7 @@ interface ICardProps {
 const Card = ({ el }: ICardProps) => {
   const [imgLoaded, setImgLoaded] = useState(false);
   const [progress, setProgress] = useState(0);
-
+  const nav = useNavigate();
   const getColor = (percentage: number) => {
     if (percentage >= 70) return "#21d07a";
     if (percentage >= 40) return "#d2d531";
@@ -41,6 +42,7 @@ const Card = ({ el }: ICardProps) => {
           <img className={scss.imgPlaceholder} src={loading} alt="img" />
         )}
         <img
+          onClick={() => nav(`/details/${el.id}`)}
           src={`https://media.themoviedb.org/t/p/w440_and_h660_face/${el.poster_path}`}
           alt={el.title}
           style={{
