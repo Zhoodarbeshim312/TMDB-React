@@ -40,7 +40,10 @@ const TopRated = () => {
 
         <div className={scss.content}>
           {apiData.map((el) => (
-            <Card el={el} key={el.id} />
+            <>
+              <Card el={el} key={el.id} />
+              <h1>{el.id}</h1>
+            </>
           ))}
         </div>
       </div>
