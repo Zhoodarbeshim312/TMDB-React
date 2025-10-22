@@ -87,6 +87,9 @@ const Welcome = () => {
           backgroundImage: currentBg
             ? `linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url(https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/${currentBg.backdrop_path})`
             : "none",
+          minHeight: "80vh",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
         }}
       >
         {nextBg && (
