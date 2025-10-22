@@ -9,6 +9,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    h5 {
+      display: none;
+      @media (max-width: 815px) {
+        display: flex;
+      }
+    }
     a {
       display: flex;
       align-items: center;
@@ -89,6 +95,112 @@
           font-size: 30px;
           right: 8px;
           position: absolute;
+        }
+      }
+      @media (max-width: 815px) {
+        display: none;
+      }
+    }
+  }
+  .menu {
+    top: 70px;
+    background: rgba(128, 0, 128, 0.459);
+    position: fixed;
+    border: 2px solid white;
+    right: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    a {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+      gap: 5px;
+      color: white;
+      font-weight: 600;
+      span {
+        border: 2px solid white;
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        border-radius: 10px;
+        background: purple;
+        color: white;
+      }
+    }
+    .nav {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      .form {
+        position: relative;
+        input {
+          backdrop-filter: blur(5px);
+          border: 2px solid white;
+          background: none;
+          border-radius: 10px;
+          font-size: 16px;
+          padding: 10px 40px 10px 10px;
+          color: white;
+          &::placeholder {
+            color: white;
+          }
+        }
+        button {
+          top: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: none;
+          color: white;
+          font-size: 30px;
+          right: 8px;
+          position: absolute;
+        }
+      }
+      a {
+        font-family: "League Spartan", sans-serif;
+        font-weight: 500;
+        font-style: Medium;
+        font-size: 18px;
+        line-height: 100%;
+        color: white;
+        transition: 0.2s ease-in-out;
+        width: max-content;
+        position: relative;
+        &::after {
+          content: "";
+          bottom: -4px;
+          position: absolute;
+          height: 2px;
+          width: 100%;
+          border-radius: 50px;
+          left: 0;
+          background: white;
+          transition: 0.3s ease-in-out;
+          transform: scaleX(0);
+        }
+        &:hover,
+        &.active {
+          color: #ff80d5;
+        }
+        &:hover::after,
+        &.active::after {
+          transform: scaleX(1);
+          color: #ff80d5;
+        }
+      }
+      .links {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        a {
+          font-size: 25px;
         }
       }
     }

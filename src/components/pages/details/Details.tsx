@@ -48,8 +48,7 @@ const Details = () => {
   return (
     <section
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/${apiData?.backdrop_path})`,
-        minHeight: "100vh",
+        backgroundImage: ` url(https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/${apiData?.backdrop_path})`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center top",
       }}

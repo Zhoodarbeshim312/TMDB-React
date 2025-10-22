@@ -42,7 +42,6 @@ const TopRated = () => {
           {apiData.map((el) => (
             <>
               <Card el={el} key={el.id} />
-              <h1>{el.id}</h1>
             </>
           ))}
         </div>
