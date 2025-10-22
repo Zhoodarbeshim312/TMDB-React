@@ -1,17 +1,29 @@
 .Details {
-  padding: 150px 0;
+  min-height: 61vh;
   .content {
     display: flex;
+    margin: 150px 0;
     gap: 30px;
     .preview {
       width: 300px;
       img {
         border-radius: 10px;
         width: 100%;
+        object-fit: cover;
+      }
+      @media (max-width: 815px) {
+        img {
+          display: none;
+        }
       }
     }
     .info {
+      padding: 10px;
+      border-radius: 10px;
+      background: #00000067;
+      backdrop-filter: blur(5px);
       display: flex;
+      justify-content: center;
       flex-direction: column;
       gap: 20px;
       width: 70%;
@@ -51,7 +63,7 @@
         }
       }
     }
-    @media (max-width: 795px) {
+    @media (max-width: 815px) {
       align-items: center;
       text-align: center;
       justify-content: center;
@@ -60,7 +72,24 @@
         justify-content: center;
       }
       .info {
+        width: 100%;
         p {
+          justify-content: center;
+        }
+      }
+    }
+    @media (max-width: 510px) {
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      flex-direction: column;
+      .actions {
+        justify-content: center;
+      }
+      .info {
+        width: 100%;
+        p {
+          flex-direction: column;
           justify-content: center;
         }
       }
