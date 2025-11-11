@@ -63,6 +63,7 @@ const Card = ({ el }: ICardProps) => {
               pathColor: getColor(progress),
               trailColor: "#204529",
               strokeLinecap: "round",
+              textSize: "25px",
             })}
           />
         </div>
